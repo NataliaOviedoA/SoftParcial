@@ -2,8 +2,10 @@ export class Doctor {
   id : number;
   ci : String;
   nombre : String;
-  fechaNacimiento : String;
   sexo : String;
+  fechaNacimiento : String;
+  idTurno : number;
+  idEspecialidad : number;
 }
 
 // CREATE TABLE especialidad (
