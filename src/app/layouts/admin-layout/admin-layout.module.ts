@@ -13,6 +13,8 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
+import { ConsultaComponent } from 'src/app/pages/consulta/consulta.component';
+import { HistorialComponent } from 'src/app/pages/historial/historial.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +32,9 @@ import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    DoctorComponent
+    DoctorComponent,
+    ConsultaComponent,
+    HistorialComponent
   ]
 })
 

@@ -4,8 +4,8 @@ export class Doctor {
   nombre : String;
   sexo : String;
   fechaNacimiento : String;
-  idTurno : number;
-  idEspecialidad : number;
+  turno : String;
+  especialidad : String;
 }
 
 // CREATE TABLE especialidad (

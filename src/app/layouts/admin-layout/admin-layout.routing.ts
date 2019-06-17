@@ -6,6 +6,8 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
+import { ConsultaComponent } from 'src/app/pages/consulta/consulta.component';
+import { HistorialComponent } from 'src/app/pages/historial/historial.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -13,5 +15,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'tables',         component: TablesComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
-    { path: 'doctor',         component: DoctorComponent }
+    { path: 'doctor',         component: DoctorComponent },
+    { path: 'consulta',       component: ConsultaComponent },
+    { path: 'historial',      component: HistorialComponent }
 ];

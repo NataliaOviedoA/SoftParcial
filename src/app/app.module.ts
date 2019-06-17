@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { DoctorComponent } from './pages/doctor/doctor.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { HistorialComponent } from './pages/historial/historial.component';
+// import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -28,14 +29,13 @@ import { HistorialComponent } from './pages/historial/historial.component';
     NgbModule,
     RouterModule,
     AppRoutingModule,
+  //  MatTableModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent,
-    ConsultaComponent,
-    HistorialComponent
+    AuthLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
