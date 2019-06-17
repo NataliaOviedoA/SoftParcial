@@ -15,6 +15,8 @@ import { ComponentsModule } from './components/components.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DoctorComponent } from './pages/doctor/doctor.component';
+import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { HistorialComponent } from './pages/historial/historial.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { DoctorComponent } from './pages/doctor/doctor.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    ConsultaComponent,
+    HistorialComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
