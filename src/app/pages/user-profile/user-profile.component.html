@@ -72,25 +72,25 @@
               <h3 class="mb-0">Nuevo paciente</h3>
             </div>
             <div class="col-4 text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Guardar</a>
+              <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
             </div>
           </div>
         </div>
         <div class="card-body">
-          <form>
+          <form [formGroup]="_contactForm" (submit)="onSubmit()">
             <h6 class="heading-small text-muted mb-4">Insertar la siguiente informacion</h6>
             <div class="pl-lg-4">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="ci">Carnet de identidad</label>
-                    <input type="text" id="ci" name="ci" class="form-control form-control-alternative">
+                    <input type="text" formControlName="ci" class="form-control form-control-alternative">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control form-control-alternative">
+                    <input type="text" formControlName="nombre" class="form-control form-control-alternative">
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="sexo">Sexo</label>
-                   <select id="sexo" name="sexo" class="form-control form-control-alternative">
+                   <select formControlName="sexo" class="form-control form-control-alternative">
                      <option val="">Seleccione un sexo</option>
                      <option val="M">Masculino</option>
                      <option val="F">Femenino</option>
@@ -108,7 +108,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="fecha">Fecha de nacimiento</label>
-                    <input type="date" id="fecha" name="fecha" class="form-control form-control-alternative">
+                    <input type="date" formControlName="fechaNacimiento" class="form-control form-control-alternative">
                   </div>
                 </div>
               </div>

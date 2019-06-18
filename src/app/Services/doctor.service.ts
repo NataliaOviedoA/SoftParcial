@@ -11,6 +11,8 @@ import { Especialidad } from '../Models/especialidad.model';
 })
 export class DoctorService {
 
+  contactList: String[] = [];
+
   constructor(private http: HttpClient) { }
 
   listarDoctores(): Observable<Doctor[]> {
@@ -37,5 +39,13 @@ export class DoctorService {
     );
   }
 
-
+  // addDoctor(params): Observable<Doctor[]> {
+  //   const headers = new HttpHeaders().set('Content-Type', 'application/json');
+  //   //   headers = headers.set('Authorization', 'Bearer ' + token);
+  //      return this.http.post<Doctor[]>(
+  //        Constants.ENDPOINT_DOCTOR +
+  //         params.ID,
+  //        { headers : headers }
+  //      );
+  // }
 }

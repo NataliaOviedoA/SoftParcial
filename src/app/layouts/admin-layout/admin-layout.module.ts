@@ -24,7 +24,9 @@ import { HistorialComponent } from 'src/app/pages/historial/historial.component'
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     DashboardComponent,
@@ -34,7 +36,7 @@ import { HistorialComponent } from 'src/app/pages/historial/historial.component'
     MapsComponent,
     DoctorComponent,
     ConsultaComponent,
-    HistorialComponent
+    HistorialComponent,
   ]
 })
 

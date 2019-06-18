@@ -8,5 +8,6 @@ export class Constants {
   public static ENDPOINT_DOCTOR = Constants.SERVER_URL +  '/topicos/doctores/';
   public static ENDPOINT_TURNO = Constants.SERVER_URL +  '/topicos/turnos/';
   public static ENDPOINT_ESPECIALIDAD = Constants.SERVER_URL +  '/topicos/especialidades/';
+  public static ENDPOINT_CONSULTA = Constants.SERVER_URL +  '/topicos/consultas/';
 
 }

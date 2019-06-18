@@ -6,8 +6,8 @@
   <div class="container-fluid d-flex align-items-center">
     <div class="row">
       <div class="col-lg-7 col-md-10">
-        <h1 class="display-2 text-white">Gestionar doctores</h1>
-        <p class="text-white mt-0 mb-5">Registrar, editar y modificar doctores</p>
+        <h1 class="display-2 text-white">Gestionar consultas</h1>
+        <p class="text-white mt-0 mb-5">Registrar, editar y modificar consultas</p>
       </div>
     </div>
   </div>
@@ -22,29 +22,29 @@
             <div class="col">
               <div class="card bg-default shadow">
                 <div class="card-header bg-transparent border-0">
-                  <h3 class="text-white mb-0">Listar doctores</h3>
+                  <h3 class="text-white mb-0">Listar consultas</h3>
                 </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-dark table-flush">
                     <thead class="thead-dark">
                       <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Ci</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Sexo</th>
-                        <th scope="col">Turno</th>
-                        <th scope="col">Especialidad</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Hora Inicio</th>
+                        <th scope="col">Hora Fin</th>
                         <th scope="col">Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of listaDoctores">
+                      <tr *ngFor="let item of listaConsulta">
                         <td>{{item.id}}</td>
-                        <td>{{item.ci}}</td>
-                        <td>{{item.nombre}}</td>
-                        <td>{{item.sexo}}</td>
-                        <td>{{item.turno}}</td>
-                        <td>{{item.especialidad}}</td>
+                        <td>{{item.paciente}}</td>
+                        <td>{{item.fecha}}</td>
+                        <td>{{item.dia}}</td>
+                        <td>{{item.horaIni}}</td>
+                        <td>{{item.horaFin}}</td>
                         <td class="text-right">
                           <div ngbDropdown placement="bottom-right">
                             <a class="btn btn-sm btn-icon-only text-light" ngbDropdownToggle>
