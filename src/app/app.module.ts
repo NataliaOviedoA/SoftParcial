@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { DoctorComponent } from './pages/doctor/doctor.component';
 import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { HistorialComponent } from './pages/historial/historial.component';
+import { DialogUserComponent } from './pages/dialog-user/dialog-user.component';
 // import {MatTableModule} from '@angular/material/table';
 
 
@@ -37,7 +38,8 @@ import { HistorialComponent } from './pages/historial/historial.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    DialogUserComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

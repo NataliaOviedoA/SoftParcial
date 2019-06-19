@@ -14,7 +14,7 @@
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
-    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+    <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
       <div class="card card-profile shadow">
         <div class="card-body pt-0 pt-md-4">
           <!-- Dark table -->
@@ -64,58 +64,6 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-8 order-xl-1">
-      <div class="card bg-secondary shadow">
-        <div class="card-header bg-white border-0">
-          <div class="row align-items-center">
-            <div class="col-8">
-              <h3 class="mb-0">Nuevo paciente</h3>
-            </div>
-            <div class="col-4 text-right">
-              <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="_contactForm" (submit)="onSubmit()">
-            <h6 class="heading-small text-muted mb-4">Insertar la siguiente informacion</h6>
-            <div class="pl-lg-4">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="ci">Carnet de identidad</label>
-                    <input type="text" formControlName="ci" class="form-control form-control-alternative">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="nombre">Nombre</label>
-                    <input type="text" formControlName="nombre" class="form-control form-control-alternative">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="sexo">Sexo</label>
-                   <select formControlName="sexo" class="form-control form-control-alternative">
-                     <option val="">Seleccione un sexo</option>
-                     <option val="M">Masculino</option>
-                     <option val="F">Femenino</option>
-                   </select>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label class="form-control-label" for="fecha">Fecha de nacimiento</label>
-                    <input type="date" formControlName="fechaNacimiento" class="form-control form-control-alternative">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>
