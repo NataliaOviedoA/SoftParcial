@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/Services/servicio.service';
+import { Servicio } from 'src/app/Models/servicio.model';
 
 @Component({
   selector: 'app-servicio',
@@ -18,8 +19,10 @@ export class ServicioComponent implements OnInit {
 
   mostrarServicio() {
     this.servicioS.listarServicio().subscribe(respuesta => {
-      this.listarServicio = respuesta;
-      console.warn(respuesta);
+      const result = <any>respuesta;
+     const Obj = JSON.parse(result[0].json);
+     const newObj = Obj[0].KeyPhrases;
+      this.listarServicio = newObj;
     });
   }
 
