@@ -39,13 +39,17 @@ export class DoctorService {
     );
   }
 
-  // addDoctor(params): Observable<Doctor[]> {
-  //   const headers = new HttpHeaders().set('Content-Type', 'application/json');
-  //   //   headers = headers.set('Authorization', 'Bearer ' + token);
-  //      return this.http.post<Doctor[]>(
-  //        Constants.ENDPOINT_DOCTOR +
-  //         params.ID,
-  //        { headers : headers }
-  //      );
-  // }
+  addDoctor(form): Observable<Doctor[]> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+  this.http.post(
+  Constants.ENDPOINT_DOCTOR_INSERTAR + '?ci=' + form.ci + '&nombre=' + form.nombre + '&sexo=' + form.sexo + '&fechaNacimiento=' + form.fechaNacimiento +
+  '&idTurno=' + form.idTurno + '&idEspecialidad=' + form.idEspecialidad,
+  {headers : headers})
+  .subscribe( data  => {console.log('POST Request is successful ', data); },
+  error  => { console.log('Error', error); });
+
+  return this.http.get<Doctor[]>(
+    Constants.ENDPOINT_DOCTOR, { headers : headers }
+  );
+  }
 }

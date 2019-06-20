@@ -60,11 +60,3 @@ register(form) {
 }
 
 }
-
-export class PacienteI {
-  constructor(private ci: number,
-    private nombre: String,
-    private sexo: String,
-    private fechaNacimiento: String
-    ) {}
-}
