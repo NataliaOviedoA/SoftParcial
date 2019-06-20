@@ -6,6 +6,7 @@ export class Constants {
   // =========================== Modificar esta IP ===========================
   public static ENDPOINT_PACIENTES = Constants.SERVER_URL +  '/datos/paciente.php';
   public static ENDPOINT_DOCTOR = Constants.SERVER_URL +  '/datos/doctor.php';
+  public static ENDPOINT_HORARIO = Constants.SERVER_URL +  '/datos/horario.php';
   public static ENDPOINT_TURNO = Constants.SERVER_URL +  '/datos/turno.php';
   public static ENDPOINT_ESPECIALIDAD = Constants.SERVER_URL +  '/datos/especialidad.php';
   public static ENDPOINT_CONSULTA = Constants.SERVER_URL +  '/datos/consulta.php';

@@ -19,7 +19,7 @@
         <div class="card-body pt-0 pt-md-4">
           <!-- Dark table -->
           <div class="col-12 text-right">
-              <button class="btn btn-sm btn-primary">Nuevo</button>
+              <button type="button" (click)="openConsulta(content3)" class="btn btn-sm btn-primary">Nuevo</button>
             </div>
           <div class="row mt-5">
             <div class="col">
@@ -82,34 +82,18 @@
     <form #myform="ngForm" (ngSubmit)="registerConsulta(myform)">
       <div class="modal-body">
         <div class="form-group">
-          <label for="ci">Ci</label>
+          <label for="idPaciente">Paciente</label>
           <div class="input-group">
-            <input name="ci" id="ci" class="form-control" type="text" ngModel required>
+            <select  id="idPaciente" name="idPaciente" class="form-control" ngModel required>
+              <option value="">Seleccione un paciente</option>
+              <option *ngFor="let item of listaPacientes" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
           </div>
-          <label for="nombre">Nombre</label>
-          <div class="input-group">
-            <input name="nombre" id="nombre" class="form-control"  type="text" ngModel required>
-          </div>
-          <label for="sexo">Sexo</label>
-          <div class="input-group">
-            <input name="sexo" id="sexo" class="form-control"type="text" ngModel required>
-          </div>
-          <label for="fechaNacimiento">Fecha de nacimiento</label>
-          <div class="input-group">
-            <input name="fechaNacimiento" id="fechaNacimiento" class="form-control" type="text" ngModel required>
-          </div>
-          <label for="fechaNacimiento">Turno</label>
+          <label for="idTurno">Turno</label>
           <div class="input-group">
             <select  id="idTurno" name="idTurno" class="form-control" ngModel required>
               <option value="">Seleccione un turno</option>
-              <option *ngFor="let item of listaTurnos" value="{{item.id}}">{{item.nombre}}</option>
-            </select>
-          </div>
-          <label for="fechaNacimiento">Especialidad</label>
-          <div class="input-group">
-            <select  id="idEspecialidad" name="idEspecialidad" class="form-control" ngModel required>
-                <option value="">Seleccione un turno</option>
-              <option *ngFor="let item of listaEspecialidad" value="{{item.id}}">{{item.nombre}}</option>
+              <option *ngFor="let item of listaHorarios" value="{{item.id}}">{{item.nombre}} el dia {{item.dia}} a las {{item.horaInicio}} hasta {{item.horaFin}}</option>
             </select>
           </div>
         </div>

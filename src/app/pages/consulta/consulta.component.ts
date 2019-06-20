@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from 'src/app/Services/consulta.service';
 import { Consulta } from 'src/app/Models/consulta.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { Turno } from 'src/app/Models/turno.model';
+import { Horario } from 'src/app/Models/horario.model';
+import { Paciente } from 'src/app/Models/paciente.model';
 
 @Component({
   selector: 'app-consulta',
@@ -11,12 +14,16 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ConsultaComponent implements OnInit {
   listaConsulta: Consulta[] = [];
+  listaHorarios: Horario[] = [];
+  listaPacientes: Paciente[] = [];
   closeResult: string;
   constructor(private consultaService: ConsultaService,
     private modalServiceConsulta: NgbModal) { }
 
   ngOnInit() {
     this.listarConsultas();
+    this.listarHorarios();
+    this.listarPacientes();
   }
 
   listarConsultas() {
@@ -26,7 +33,7 @@ export class ConsultaComponent implements OnInit {
     });
   }
 
-  open(content3) {
+  openConsulta(content3) {
     this.modalServiceConsulta.open(content3, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -47,6 +54,18 @@ export class ConsultaComponent implements OnInit {
   registerConsulta(form2) {
     this.consultaService.addConsulta(form2.value).subscribe(respuesta => {
       this.listaConsulta = respuesta;
+    });
+  }
+
+  listarHorarios() {
+    this.consultaService.listarHorarios().subscribe(respuesta => {
+      this.listaHorarios = respuesta;
+    });
+  }
+
+  listarPacientes() {
+    this.consultaService.listarPaciente().subscribe(respuesta => {
+      this.listaPacientes = respuesta;
     });
   }
 

@@ -1,9 +1,10 @@
 export class Horario {
-  idTurno : number;
-  id : number;
-  horarioInicio : String;
-  horarioFin : String;
-  dia : String;
+  id: number;
+  nombre: String;
+  dia: String;
+  horarioInicio: String;
+  horarioFin: String;
+
 }
 
 
