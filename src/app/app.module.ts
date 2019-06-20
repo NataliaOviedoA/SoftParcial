@@ -38,8 +38,7 @@ import { DialogUserComponent } from './pages/dialog-user/dialog-user.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent,
-    DialogUserComponent
+    AuthLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PacienteService } from 'src/app/Services/paciente.service';
 import { Paciente } from 'src/app/Models/paciente.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,6 +15,8 @@ export class UserProfileComponent implements OnInit {
   public _contactForm: FormGroup;
   listaPaciente: Paciente[] = [];
   public data: Paciente;
+  isPopupOpened: boolean;
+  dialog: any;
   constructor(private _formBuilder: FormBuilder,
     private pacienteService: PacienteService) { }
 
@@ -28,9 +31,15 @@ export class UserProfileComponent implements OnInit {
     // });
   }
 
-  // onSubmit() {
-  //     this.pacienteService.addPaciente(this._contactForm.value);
-  // }
+  addPaciente() {
+    this.isPopupOpened = true;
+    const dialogRef = this.dialog.open(DialogUserComponent, {
+      data: {}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.isPopupOpened = false;
+    });
+  }
 
   listarPaciente() {
     this.pacienteService.listarPacientes().subscribe(respuesta => {

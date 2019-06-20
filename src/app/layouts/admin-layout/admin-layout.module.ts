@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
 import { ConsultaComponent } from 'src/app/pages/consulta/consulta.component';
 import { HistorialComponent } from 'src/app/pages/historial/historial.component';
+import { DialogUserComponent } from 'src/app/pages/dialog-user/dialog-user.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HistorialComponent } from 'src/app/pages/historial/historial.component'
     DoctorComponent,
     ConsultaComponent,
     HistorialComponent,
-  ]
+    DialogUserComponent,
+  ],
 })
 
 export class AdminLayoutModule {}
