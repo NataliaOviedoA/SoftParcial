@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from 'src/app/Services/consulta.service';
 import { Consulta } from 'src/app/Models/consulta.model';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-consulta',
@@ -10,7 +11,9 @@ import { Consulta } from 'src/app/Models/consulta.model';
 })
 export class ConsultaComponent implements OnInit {
   listaConsulta: Consulta[] = [];
-  constructor(private consultaService: ConsultaService) { }
+  closeResult: string;
+  constructor(private consultaService: ConsultaService,
+    private modalServiceConsulta: NgbModal) { }
 
   ngOnInit() {
     this.listarConsultas();
@@ -20,6 +23,30 @@ export class ConsultaComponent implements OnInit {
     this.consultaService.listarConsultas().subscribe(respuesta => {
       this.listaConsulta = respuesta;
       console.warn(respuesta);
+    });
+  }
+
+  open(content3) {
+    this.modalServiceConsulta.open(content3, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
+  }
+
+  registerConsulta(form2) {
+    this.consultaService.addConsulta(form2.value).subscribe(respuesta => {
+      this.listaConsulta = respuesta;
     });
   }
 

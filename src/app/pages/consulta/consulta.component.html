@@ -71,3 +71,52 @@
     </div>
   </div>
 </div>
+
+<ng-template #content3 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Nuevo Paciente</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form #myform="ngForm" (ngSubmit)="registerConsulta(myform)">
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="ci">Ci</label>
+          <div class="input-group">
+            <input name="ci" id="ci" class="form-control" type="text" ngModel required>
+          </div>
+          <label for="nombre">Nombre</label>
+          <div class="input-group">
+            <input name="nombre" id="nombre" class="form-control"  type="text" ngModel required>
+          </div>
+          <label for="sexo">Sexo</label>
+          <div class="input-group">
+            <input name="sexo" id="sexo" class="form-control"type="text" ngModel required>
+          </div>
+          <label for="fechaNacimiento">Fecha de nacimiento</label>
+          <div class="input-group">
+            <input name="fechaNacimiento" id="fechaNacimiento" class="form-control" type="text" ngModel required>
+          </div>
+          <label for="fechaNacimiento">Turno</label>
+          <div class="input-group">
+            <select  id="idTurno" name="idTurno" class="form-control" ngModel required>
+              <option value="">Seleccione un turno</option>
+              <option *ngFor="let item of listaTurnos" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+          </div>
+          <label for="fechaNacimiento">Especialidad</label>
+          <div class="input-group">
+            <select  id="idEspecialidad" name="idEspecialidad" class="form-control" ngModel required>
+                <option value="">Seleccione un turno</option>
+              <option *ngFor="let item of listaEspecialidad" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark">Save</button>
+      </div>
+    </form>
+  </ng-template>
+

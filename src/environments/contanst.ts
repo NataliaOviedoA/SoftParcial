@@ -11,5 +11,6 @@ export class Constants {
   public static ENDPOINT_CONSULTA = Constants.SERVER_URL +  '/datos/consulta.php';
   public static ENDPOINT_PACIENTES_INSERTAR = Constants.SERVER_URL +  '/datos/pacienteInsertar.php';
   public static ENDPOINT_DOCTOR_INSERTAR = Constants.SERVER_URL +  '/datos/doctorInsertar.php';
+  public static ENDPOINT_CONSULTA_INSERTAR = Constants.SERVER_URL +  '/datos/consultaInsertar.php';
 
 }

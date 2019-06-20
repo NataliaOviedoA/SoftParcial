@@ -18,4 +18,17 @@ export class ConsultaService {
       Constants.ENDPOINT_CONSULTA, { headers : headers }
     );
   }
+
+  addConsulta(form): Observable<Consulta[]> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+  this.http.post(
+  Constants.ENDPOINT_CONSULTA_INSERTAR + '?fecha=' + form.fecha + '&idTurno=' + form.idTurno + '&idHorario=' + form.idHorario +
+  '&idPaciente=' + form.idPaciente, { headers : headers })
+  .subscribe( data  => {console.log('POST Request is successful ', data); },
+  error  => { console.log('Error', error); });
+
+  return this.http.get<Consulta[]>(
+    Constants.ENDPOINT_CONSULTA, { headers : headers }
+  );
+  }
 }

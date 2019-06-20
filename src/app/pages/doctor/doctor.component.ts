@@ -74,6 +74,6 @@ export class DoctorComponent implements OnInit {
       this.listaDoctores = respuesta;
       // console.warn(respuesta);
     });
-}
+  }
 
 }
