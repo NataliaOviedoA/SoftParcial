@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PacienteService } from 'src/app/Services/paciente.service';
 import { Paciente } from 'src/app/Models/paciente.model';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { DialogUserComponent } from '../dialog-user/dialog-user.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_control_value_accessor';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,33 +14,34 @@ import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 })
 export class UserProfileComponent implements OnInit {
 
-  public _contactForm: FormGroup;
+
   listaPaciente: Paciente[] = [];
-  public data: Paciente;
-  isPopupOpened: boolean;
-  dialog: any;
-  constructor(private _formBuilder: FormBuilder,
-    private pacienteService: PacienteService) { }
+  closeResult: string;
+  constructor(
+    private pacienteService: PacienteService,
+    private modalService: NgbModal
+    ) { }
 
   ngOnInit() {
     this.listarPaciente();
-
-    // this._contactForm = this._formBuilder.group({
-    //   ci: [ this.data.ci, [Validators.required]],
-    //   nombre: [ this.data.nombre, [Validators.required]],
-    //   sexo: [ this.data.sexo, [Validators.required]],
-    //   fechaNacimiento: [ this.data.fechaNacimiento, [Validators.required]],
-    // });
   }
 
-  addPaciente() {
-    this.isPopupOpened = true;
-    const dialogRef = this.dialog.open(DialogUserComponent, {
-      data: {}
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-    dialogRef.afterClosed().subscribe(result => {
-      this.isPopupOpened = false;
-    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
   listarPaciente() {
@@ -48,4 +51,20 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+register(form) {
+    // console.log(form.value.ci);
+    this.pacienteService.addPaciente(form.value).subscribe(respuesta => {
+      this.listaPaciente = respuesta;
+      console.warn(respuesta);
+    });
+}
+
+}
+
+export class PacienteI {
+  constructor(private ci: number,
+    private nombre: String,
+    private sexo: String,
+    private fechaNacimiento: String
+    ) {}
 }

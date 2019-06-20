@@ -20,14 +20,14 @@ export class PacienteService {
     );
   }
 
-//   addPaciente(contact: Paciente): Observable<Paciente[]> {
-//     this._contactList.push(contact);
-//     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-//  //   headers = headers.set('Authorization', 'Bearer ' + token);
-//     return this.http.post<Paciente[]>(
-//       Constants.ENDPOINT_PACIENTES + '?ci=' + contact.ci  +
-//       + '&nombre=' + contact.nombre + '&sexo=' + contact.sexo + '&fechaNacimiento=' + contact.fechaNacimiento ,
-//        { headers : headers }
-//     );
-//   }
+  addPaciente(form): Observable<Paciente[]> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    console.log(form);
+  // this.http.post(Constants.ENDPOINT_PACIENTES_INSERTAR, form.value)
+  // .subscribe( data  => {console.log('POST Request is successful ', data); },
+  // error  => { console.log('Error', error); });
+  return this.http.get<Paciente[]>(
+    Constants.ENDPOINT_PACIENTES, { headers : headers }
+  );
+  }
 }

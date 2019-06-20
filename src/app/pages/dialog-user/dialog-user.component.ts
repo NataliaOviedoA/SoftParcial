@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dialog-user',
@@ -7,31 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./dialog-user.component.scss']
 })
 export class DialogUserComponent implements OnInit {
+  closeResult: string;
 
-  public _contactForm: FormGroup;
-  public data: any;
-  constructor(private _formBuilder: FormBuilder,
-   ) { }
+  constructor(@Inject(NgbModal) public data: any) {}
 
   ngOnInit() {
-    this._contactForm = this._formBuilder.group({
-      ID: [this.data.ID],
-      FirstName: [ this.data.FirstName, [Validators.required]],
-      LastName: [ this.data.LastName, [Validators.required]],
-      Contact: [ this.data.Contact, [Validators.required]],
-      Email: [ this.data.Email , [Validators.required]],
-    });
   }
-
-  // onSubmit() {
-  //   if (isNaN(this.data.ID)) {
-  //     this._contactService.addContact(this._contactForm.value);
-  //     this.dialogRef.close();
-  //   } else {
-  //     this._contactService.editContact(this._contactForm.value);
-  //     this.dialogRef.close();
-  //   }
-  // }
-
 
 }

@@ -8,6 +8,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
 import { ConsultaComponent } from 'src/app/pages/consulta/consulta.component';
 import { HistorialComponent } from 'src/app/pages/historial/historial.component';
+import { DialogUserComponent } from 'src/app/pages/dialog-user/dialog-user.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -17,5 +18,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'doctor',         component: DoctorComponent },
     { path: 'consulta',       component: ConsultaComponent },
-    { path: 'historial',      component: HistorialComponent }
+    { path: 'historial',      component: HistorialComponent },
+    { path: 'dialog',         component: DialogUserComponent }
 ];
