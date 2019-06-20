@@ -89,9 +89,9 @@
               <option *ngFor="let item of listaPacientes" value="{{item.id}}">{{item.nombre}}</option>
             </select>
           </div>
-          <label for="idTurno">Turno</label>
+          <label for="idHorario">Turno</label>
           <div class="input-group">
-            <select  id="idTurno" name="idTurno" class="form-control" ngModel required>
+            <select  id="idHorario" name="idHorario" class="form-control" ngModel required>
               <option value="">Seleccione un turno</option>
               <option *ngFor="let item of listaHorarios" value="{{item.id}}">{{item.nombre}} el dia {{item.dia}} a las {{item.horaInicio}} hasta {{item.horaFin}}</option>
             </select>
