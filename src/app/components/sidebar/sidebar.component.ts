@@ -17,7 +17,8 @@ export const ROUTES: RouteInfo[] = [
     // { path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' },
     { path: '/doctor', title: 'Gestionar doctor',  icon:'ni-circle-08 text-pink', class: '' },
     { path: '/consulta', title: 'Gestionar consulta',  icon:'ni-pin-3 text-orange', class: '' },
-    { path: '/historial', title: 'Gestionar historial',  icon:'ni-key-25 text-info', class: '' }
+    { path: '/historial', title: 'Gestionar historial',  icon:'ni-key-25 text-info', class: '' },
+    { path: '/servicio', title: 'Ver servicio paciente',  icon:'ni-key-25 text-info', class: '' }
 ];
 
 @Component({

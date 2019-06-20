@@ -16,6 +16,7 @@ import { DoctorComponent } from 'src/app/pages/doctor/doctor.component';
 import { ConsultaComponent } from 'src/app/pages/consulta/consulta.component';
 import { HistorialComponent } from 'src/app/pages/historial/historial.component';
 import { DialogUserComponent } from 'src/app/pages/dialog-user/dialog-user.component';
+import { ServicioComponent } from 'src/app/pages/servicio/servicio.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DialogUserComponent } from 'src/app/pages/dialog-user/dialog-user.compo
     ConsultaComponent,
     HistorialComponent,
     DialogUserComponent,
+    ServicioComponent,
   ],
 })
 

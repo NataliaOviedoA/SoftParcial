@@ -14,5 +14,6 @@ export class Constants {
   public static ENDPOINT_DOCTOR_INSERTAR = Constants.SERVER_URL +  '/datos/doctorInsertar.php';
   public static ENDPOINT_CONSULTA_INSERTAR = Constants.SERVER_URL +  '/datos/consultaInsertar.php';
   public static ENDPOINT_AMAZON_SERVICE = Constants.SERVER_URL +  '/datos/review.php';
+  public static ENDPOINT_OBTENER_VALOR = Constants.SERVER_URL +  '/datos/valorObtener.php';
 
 }
