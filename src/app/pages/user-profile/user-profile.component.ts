@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { DialogUserComponent } from '../dialog-user/dialog-user.component';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_control_value_accessor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -19,7 +20,8 @@ export class UserProfileComponent implements OnInit {
   closeResult: string;
   constructor(
     private pacienteService: PacienteService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -50,12 +52,23 @@ export class UserProfileComponent implements OnInit {
       console.warn(respuesta);
     });
   }
+  // me voy a otra pagina, pero le envio el id del paciente que estoy seleccionado como parametro
+  // para que pueda busar el historial del paciente por el id
+  irDetalle(item: Paciente) {
+   this.router.navigate(['/servicio'], {queryParams: {idPaciente: item.id}});
+   console.warn(item.nombre);
+  }
 
 register(form) {
     // console.log(form.value.ci);
     this.pacienteService.addPaciente(form.value).subscribe(respuesta => {
-      this.listaPaciente = respuesta;
-      console.warn(respuesta);
+    //  this.listaPaciente = respuesta;
+    if ( respuesta != null ) {
+    this.listarPaciente();
+    console.warn(respuesta);
+    } else {
+      console.warn('error al registrar');
+    }
     });
 }
 
